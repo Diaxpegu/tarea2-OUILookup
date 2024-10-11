@@ -3,6 +3,7 @@ import getopt
 import sys
 import time
 
+# Diego Peña Gutièrrez
 def obtener_detalles_mac(mac):
     """Consulta el fabricante de una dirección MAC usando la API de maclookup.app."""
     url = f"https://api.maclookup.app/v2/macs/{mac}"

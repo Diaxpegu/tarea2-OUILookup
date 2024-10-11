@@ -29,5 +29,4 @@ python3 OUILookup --mac aa:bb:cc:00:00:00
 python3 OUILookup --arp
 -Ayuda
 python3 OUILookup --help
-# tarea2-OUILookup
-# tarea2-OUILookup
+
