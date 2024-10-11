@@ -11,7 +11,6 @@ def obtener_detalles_mac(mac):
         respuesta.raise_for_status()  # Levanta una excepción si la respuesta es un error HTTP
         datos = respuesta.json()
         
-        # Verificar si los datos contienen el campo 'company' y si tiene un valor válido
         if 'success' in datos and datos['success'] and 'company' in datos and datos['company']:
             return datos['company']
         else:
@@ -34,22 +33,22 @@ def mostrar_detalles_mac(mac):
 def main(argv):
     """Función principal que maneja los argumentos y ejecuta la aplicación."""
     try:
-        opciones, argumentos = getopt.getopt(argv, "", ["mac=", "ayuda"])
+        opciones, argumentos = getopt.getopt(argv, "", ["mac=", "help"])
     except getopt.GetoptError:
-        print('Uso: python OUILookup.py --mac <mac> | [--ayuda]')
+        print('Uso: python OUILookup.py --mac <mac> | [--help]')
         sys.exit(2)
 
     for opt, arg in opciones:
         if opt == "--mac":
             mac = arg
             mostrar_detalles_mac(mac)
-        elif opt == "--ayuda":
-            print('Uso: python OUILookup.py --mac <mac> | [--ayuda]')
+        elif opt == "--help":
+            print('Uso: python OUILookup.py --mac <mac> | [--help]')
             print('--mac: MAC a consultar. P.e. aa:bb:cc:00:00:00.')
-            print('--ayuda: muestra este mensaje y termina.')
+            print('--help: muestra este mensaje y termina.')
             sys.exit()
         else:
-            print('Uso: python OUILookup.py --mac <mac> | [--ayuda]')
+            print('Uso: python OUILookup.py --mac <mac> | [--help]')
             sys.exit(2)
 
 if __name__ == "__main__":
